@@ -5,12 +5,20 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+:root {
+  --bg-main: #181717;
+  --bg-card: #19191a;
+  --text-main: #5f6063;
+  --text-muted: #60646e;
+  --accent: #9ddbee;
+}
+
 
 body {
-  background: linear-gradient(135deg, #0b0b0f, #15152b);
-  color: #ffffff;
-  overflow-x: hidden;
+  background: var(--bg-main);
+  color: var(--text-main);
 }
+
 
 a {
   text-decoration: none;
@@ -28,7 +36,8 @@ a {
   top: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.05);
+  /* background: var(--bg-card); */
+  background: rgba(10, 25, 47, 0.85);
   backdrop-filter: blur(12px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
@@ -50,7 +59,8 @@ a {
 .nav-logo {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #ff4ecd;
+  color: var(--accent)
+
 }
 
 .nav-menu {
@@ -68,8 +78,9 @@ a {
 
 .nav-link:hover,
 .nav-link.active {
-  background: rgba(255, 78, 205, 0.25);
-  color: #ff4ecd;
+  background: rgba(104, 197, 218, 0.774);
+  color: var(--accent)
+
 }
 /* =========================
    MOBILE RESPONSIVE FIX
@@ -160,12 +171,18 @@ a {
   padding: 120px 20px 40px;
 }
 .contact-btn{
+  border-radius: 30px;
   height:50px;
-  width:230px
+  width:230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 .hero h1 {
   font-size: 3rem;
-  color: #ff4ecd;
+  color: var(--accent)
+
 }
 
 .hero h2 {
@@ -176,7 +193,8 @@ a {
 .hero p {
   max-width: 650px;
   margin: 25px auto;
-  color: #ccc;
+  /* color: #ccc; */
+  color: var(--text-muted);
   font-size: 1.05rem;
 }
 
@@ -187,13 +205,13 @@ h2 {
 }
 
 #typed-text {
-  color: #ff4ecd;
-  font-weight: 600;
+  color: var(--accent);
+  font-weight:600;
 }
 
 /* Blinking cursor */
 .cursor {
-  color: #ff4ecd;
+  color:var(--accent);
   animation: blink 1s infinite;
   font-weight: bold;
 }
@@ -212,25 +230,27 @@ h2 {
 }
 
 .hero-buttons a {
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 500;
-  transition: 0.3s;
-  border: 1px solid #ff4ecd;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+.hero-buttons a:hover {
+  background: rgba(100, 255, 218, 0.1);
 }
 
+
 .hero-buttons .primary {
-  background: #ff4ecd;
+  background: var(--accent);
   color: #000;
 }
 
 .hero-buttons .secondary {
-  color: #ff4ecd;
+  color: var(--accent);
 }
 
 .hero-buttons a:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px #ff4ecd;
+  box-shadow: 0 0 20px var(--accent);
 }
 /* ================= ABOUT SECTION ================= */
 .about-section {
@@ -262,7 +282,7 @@ h2 {
   width: 300px;
   border-radius: 20px;
   transition: 0.4s ease;
-  box-shadow: 0 15px 35px rgba(255, 78, 205, 0.3);
+    box-shadow: 0 8px 30px rgba(106, 109, 109, 0.943);
 }
 
 .about-image img:hover {
@@ -276,18 +296,20 @@ h2 {
 
 .about-content h2 {
   font-size: 2rem;
-  color: #ff4ecd;
+  color: var(--accent);
   margin-bottom: 20px;
 }
 
 .about-content p {
-  color: #ddd;
+  /* color: #ddd;
+   */
+   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 15px;
 }
 
 .highlight {
-  color: white;
+   color: var(--accent);
   font-weight: 500;
   font-size: larger;
 }
@@ -302,8 +324,8 @@ h2 {
 
 .about-features button {
   background: transparent;
-  border: 1px solid #ff4ecd;
-  color: #ff4ecd;
+  border: 1px solid var(--accent);
+  color: var(--accent);
   padding: 10px 22px;
   border-radius: 30px;
   cursor: pointer;
@@ -312,9 +334,9 @@ h2 {
 }
 
 .about-features button:hover {
-  background: #ff4ecd;
+  background: var(--accent);
   color: #000;
-  box-shadow: 0 0 18px #ff4ecd;
+  box-shadow: 0 0 18px var(--accent);
   transform: translateY(-4px);
 }
 
@@ -339,13 +361,13 @@ h2 {
 }
 
 .tech-stack-section h2 {
-  color: #ff4ecd;
+  color: var(--accent);
   font-size: 28px;
   margin-bottom: 10px;
 }
 
 .tech-stack-section p {
-  color: #ccc;
+  color: var(--text-muted);
   font-size: 16px;
   margin-bottom: 30px;
 }
@@ -360,7 +382,7 @@ h2 {
 
 /* Tech Card */
 .tech-card {
-  background: rgba(255, 255, 255, 0.08);
+   background: var(--bg-card);
   backdrop-filter: blur(15px);
   border-radius: 15px;
   padding: 25px 15px;
@@ -380,7 +402,7 @@ h2 {
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 50px;
-  background: linear-gradient(90deg, #ff4ecd, #ffffff);
+  background: linear-gradient(90deg, var(--accent), #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -393,12 +415,13 @@ h2 {
 }
 
 .tech-card {
-  background: rgba(255, 255, 255, 0.08);
+  /* background: rgba(255, 255, 255, 0.08); */
+  background: var(--bg-card);
   backdrop-filter: blur(18px);
   border-radius: 20px;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 8px 30px rgba(255, 20, 147, 0.2);
+  box-shadow: 0 8px 30px rgba(69, 70, 70, 0.943);
   border: 1px solid rgba(255, 255, 255, 0.15);
   opacity: 0;
   transform: translateY(40px);
@@ -418,7 +441,7 @@ h2 {
 /* Hover */
 .tech-card:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 12px 40px rgba(255,78,205,0.6);
+  box-shadow: 0 12px 40px rgba(153, 207, 243, 0.943);
 }
 
 
@@ -441,7 +464,7 @@ h2 {
 
 /* Also familiar tools */
 .tech-additional {
-  color: #ff4ecd;
+  color: var(--accent);
   margin-top: 30px;
 }
 
@@ -502,11 +525,14 @@ h2 {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.08);
+  /* background: rgba(255, 255, 255, 0.08); */
+  background: var(--bg-card);
+
   backdrop-filter: blur(18px);
   border-radius: 22px;
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(255, 78, 205, 0.25);
+  /* box-shadow: 0 10px 30px rgba(255, 78, 205, 0.25); */
+  box-shadow: 0 8px 30px rgba(106, 109, 109, 0.943);
   border: 1px solid rgba(255,255,255,0.15);
   opacity: 0;
   transform: translateY(40px);
@@ -516,7 +542,7 @@ h2 {
 .project-card h3 {
   font-size: 1.4rem;
   margin-bottom: 15px;
-  color: #ff4ecd;
+  color: var(--accent);
 }
 
 .project-card p {
@@ -554,19 +580,22 @@ h2 {
   background: rgba(255,255,255,0.2);
   border: 1px solid rgba(255,255,255,0.3);
   font-size: 0.85rem;
+  color: white;
   transition: all 0.3s ease;
 }
 
 .project-buttons a:hover {
-  background: rgba(255,78,205,0.4);
-  box-shadow: 0 8px 25px rgba(255,78,205,0.6);
+  background: rgba(109, 107, 109, 0.4);
+  /* box-shadow: 0 8px 25px rgba(255,78,205,0.6); */
+  box-shadow: 0 12px 40px rgba(153, 207, 243, 0.943);
   transform: scale(1.05);
+  color: white;
 }
 
 /* Hover Card */
 .project-card:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 15px 45px rgba(255, 78, 205, 0.6);
+  box-shadow: 0 12px 40px rgba(153, 207, 243, 0.943);
 }
 
 /* Slide directions */
@@ -578,81 +607,91 @@ h2 {
   opacity: 1;
   transform: translateX(0) translateY(0);
 }
-/* ================= BLOG ================= */
-.blog {
-  max-width: 1200px;
-  margin: 100px auto;
+/* Project Card Container */
+.project-card{
+  position:relative;
+  width:300px;
+  height:340px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#0a192f;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+@media(min-width:992px){
+  .project-card{
+    height:380px;
+  }
 }
 
-.blog-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 35px;
-  padding: 20px;
+/* Background Image */
+.project-image{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  transition:transform 0.6s ease;
 }
 
-.blog-card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(18px);
-  border-radius: 22px;
-  padding: 30px;
-  box-shadow: 0 10px 35px rgba(255, 78, 205, 0.25);
-  border: 1px solid rgba(255,255,255,0.15);
-  opacity: 0;
-  transition: all 0.6s ease;
+/* Dark Overlay */
+.project-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(10,25,47,0.7);
 }
 
-.blog-card h3 {
-  font-size: 1.3rem;
-  color: #ff4ecd;
-  margin-bottom: 10px;
+/* Info Box */
+.project-info{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  opacity:0;
+  padding:20px;
+  transform:translateX(-100%);
+  transition:transform 0.6s ease;
+
+  background:rgba(10,25,47,0.85);
 }
 
-.blog-meta {
-  font-size: 0.8rem;
-  color: #ffd6f0;
-  margin-bottom: 15px;
+
+.project-info h3{
+  color:#64ffda;
+  margin-bottom:6px;
 }
 
-.blog-desc {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.9;
-  margin-bottom: 12px;
+.project-info p{
+  color:#ccd6f6;
+  font-size:14px;
 }
 
-/* Blog Button */
-.blog-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 24px;
-  border-radius: 25px;
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.3);
-  font-size: 0.85rem;
-  transition: all 0.3s ease;
+.project-info a{
+  display:inline-block;
+  margin-top:14px;
+  color:#64ffda;
+  border:1px solid #64ffda;
+  padding:6px 12px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:13px;
 }
 
-.blog-btn:hover {
-  background: rgba(255,78,205,0.4);
-  box-shadow: 0 8px 25px rgba(255,78,205,0.6);
-  transform: scale(1.05);
+/* Hover Effects */
+/* .project-card:hover .project-image{
+  transform:translateY(-20%);
+} */
+.project-card:hover .project-image{
+  transform: scale(1.1) translateY(-5%);
 }
 
-/* Hover Effect */
-.blog-card:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 18px 45px rgba(255,78,205,0.6);
-}
 
-/* Animation directions */
-.blog-card.slide-left { transform: translateX(-60px); }
-.blog-card.slide-right { transform: translateX(60px); }
-.blog-card.slide-up { transform: translateY(60px); }
 
-.blog-card.show {
-  opacity: 1;
-  transform: translateX(0) translateY(0);
+.project-card:hover .project-info{
+  transform:translateX(0);
+  opacity:1;
 }
 
 
@@ -664,13 +703,14 @@ h2 {
     }
 
     .background-section h2 {
-      color: #ff4ecd;
+      color: var(--accent);
       font-size: 28px;
       margin-bottom: 5px;
     }
 
     .background-section p {
       font-size: 16px;
+      color: white;
       margin-bottom: 20px;
     }
 
@@ -678,9 +718,11 @@ h2 {
     .download-btn {
       display: inline-block;
       padding: 12px ;
+      color: white;
       /* background: rgba(255,255,255,0.2); */
       /* color: white; */
       /* color: #ff4ecd; */
+      border: 2px solid grey;
       border-radius: 25px;
       text-decoration: none;
       margin-bottom: 40px;
@@ -691,7 +733,8 @@ h2 {
     .download-btn:hover {
       background: rgba(255,255,255,0.2);
       transform: scale(1.05);
-      box-shadow: 0 18px 45px rgba(255,78,205,0.6);
+      border: none;
+      box-shadow: 0 2px 30px rgba(153, 207, 243, 0.943);
     }
 
     /* Cards layout */
@@ -704,7 +747,8 @@ h2 {
     }
 
     .card {
-      background: rgba(255,255,255,0.2);
+      /* background: rgba(105, 104, 104, 0.2); */
+      background: rgba(255,255,255,0.08);
       padding: 20px;
       flex: 1 1 250px;
       border-radius: 15px;
@@ -724,32 +768,34 @@ h2 {
     .experience-card:hover {
       background: rgba(255,255,255,0.2);
       transform: scale(1.05);
-      box-shadow: 0 18px 45px rgba(255,78,205,0.6);
+      /* box-shadow: 0 12px 40px rgba(153, 207, 243, 0.943); */
+      box-shadow: 0 2px 30px rgba(153, 207, 243, 0.943);
     }
 
     .education-card:hover {
       background: rgba(255,255,255,0.2);
       transform: scale(1.05);
       /* box-shadow: 0 6px 15px rgba(0,0,0,0.2); */
-      box-shadow: 0 18px 45px rgba(255,78,205,0.6);
+      box-shadow: 0 12px 30px rgba(153, 207, 243, 0.943);
     }
 
     .focus-card:hover {
       background: rgba(255,255,255,0.2);
       transform: scale(1.05);
       /* box-shadow: 0 6px 15px rgba(0,0,0,0.2); */
-      box-shadow: 0 18px 45px rgba(255,78,205,0.6);
+      box-shadow: 0 12px 30px rgba(153, 207, 243, 0.943);
     }
 
     .card h3 {
       margin-bottom: 10px;
-      color: #ff4ecd;
+      color: var(--accent);
       display: flex;
       align-items: center;
       font-size: 18px;
     }
 
     .card p {
+      color: white;
       margin: 0;
       line-height: 1.5;
       font-size: 15px;
@@ -758,22 +804,24 @@ h2 {
     /* Quick Summary */
     .quick-summary {
       text-align: left;
-      background: rgba(255,255,255,0.2);
+      /* background: rgba(255,255,255,0.2); */
+      background: rgba(255,255,255,0.08);
       padding: 20px;
       border-radius: 15px;
+      color: white;
       transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(55, 54, 54, 0.1);
     }
 
     .quick-summary:hover {
-        background: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.2);
       transform: scale(1.02);
       /* box-shadow: 0 6px 15px rgba(0,0,0,0.2); */
-      box-shadow: 0 18px 45px rgba(255,78,205,0.6);
+      box-shadow: 0 12px 30px rgba(153, 207, 243, 0.943);
     }
 
     .quick-summary h3 {
-      color: #ff4ecd;
+      color: var(--accent);
       margin-bottom: 10px;
     }
 
@@ -795,7 +843,7 @@ h2 {
   }
 
   .tech-stack-section h2 {
-      color: #ff4ecd;
+      color: var(--accent);
     font-size: 28px;
     margin-bottom: 5px;
   }
@@ -807,10 +855,11 @@ h2 {
 
   .tech-bars {
     display: flex;
-      color: #ff4ecd;
+    color: var(--accent);
     flex-direction: column;
     gap: 40px;
     align-items: stretch;
+    font-size: 90px;
   }
 
   .tech-bar {
@@ -833,7 +882,7 @@ h2 {
 
   .progress-fill {
     height: 100%;
-    background-color:#ff4ecd7e;
+    background-color:#3533357e;
     border-radius: 25px 0 0 25px;
     width: 0;
     animation: fill-bar 2s forwards;
@@ -847,7 +896,7 @@ h2 {
 
   /* Additional tech section */
   .tech-additional {
-    color: #ff4ecd;
+    color: var(--accent);
     margin-top: 30px;
     text-align: center;
   }
@@ -878,7 +927,7 @@ h2 {
   }
 
   .contact-section h2 {
-    color: #ff4ecd;
+    color: var(--accent);
     font-size: 28px;
     margin-bottom: 5px;
   }
@@ -896,8 +945,9 @@ h2 {
   }
 
   .contact-card {
-     background: rgba(255,255,255,0.2);
-    color: #ff4ecd;
+     /* background: rgba(255,255,255,0.2); */
+     background: rgba(255,255,255,0.08);
+    color:var(--accent);
     width: 400px;
     padding: 25px ;
     border-radius: 15px;
@@ -916,15 +966,14 @@ h2 {
 
   .contact-card:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 18px 45px rgba(255,78,205,0.6);
-
-    
+    box-shadow: 0 12px 40px rgba(153, 207, 243, 0.943); 
   }
 
   .contact-card i {
     font-size: 36px;
     margin-bottom: 10px;
-    color: #ff69b4; /* pink icon color */
+    color: var(--accent)
+; /* pink icon color */
   }
 
   .contact-card h3 {
@@ -944,8 +993,8 @@ h2 {
   }
 
   .contact-card a:hover {
-    color: #ff69b4;
-    box-shadow: 0 18px 45px rgba(255,78,205,0.6);
+    color: var(--accent);
+    box-shadow: 0 12px 40px rgba(153, 207, 243, 0.943);
     text-decoration: underline;
   }
 
